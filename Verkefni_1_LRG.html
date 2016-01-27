@@ -1,0 +1,84 @@
+1.Hvað er ECMASCRIPT
+
+SVAR:ECMASCRIPT er standard scripting language og Javascript language er byggt á ECMASCRIPT standardi,Javascript jafngildir ekki nákvæmilega ECMASCRIPT, kjarni javascripts er byggt á ECMASCRIPT standardi,en Javascript er lika með auka features sem eru ekki í ECMASCRIPT standardi.
+
+2. Afhverju virkar eftirfarandi kóði í JavaScript, útskýrðu?
+
+   x();
+   function x() {
+
+   		console.log('x');
+
+   }
+
+   SVAR:Þetta er function declaration,herna er verið að kalla á fallið fyrir ofan functionið sem er allt í lagi en er samt skrítið
+   		console loggar x-ið en kemur undefined.
+
+ 3.Útskýrðu línu fyrir línu hvað eftirfarandi kóði gerir
+ 
+ 	(function() { 
+ 		 alert('Hello World');
+ 	 })();
+
+ 	SVAR: Þetta er self-executing anonymous function'();', sem kallar á sjálfa sig. og keyrir stóra scopinn  í kringum functionið '()'
+ 	
+
+4.Útskýrðu línu fyrir línu hvað eftirfarandi kóði gerir 
+
+	var originalFunction = function () {    
+		alert('hello world');
+	} 
+	var copiedFunction = originalFunction;
+
+	var originalFunction = function () {
+		 alert('goodbye world');
+	}
+	copiedFunction()
+
+	SVAR: skilgreini fyrst function sem alertar hello world,býr til nytt function sem gerir nákvæmilega það sama og fyrsta functionið,
+		  skilgreini svo aftur function,en það breytir þvi og breytir þvi þannig að það alertar 'goodbye world',og svo kallar það í functionið sem heitir
+		  copiedFunction(); og alertar hello world
+
+5.Hvað eru margar global breytur í kóðanum?
+
+	var text = 'Hello Scope';
+
+	var sum = 0;
+
+	for(var i=0; i <10; i++) {
+
+		sum+=i 
+
+	}
+	console.log(sum);
+
+	SVAR: Það eru tvær Global breytur
+
+6. Hver er munurinn á A og B þegar kemur að alert(), hvað birtist og útskýrðu hvað “use strict“ gerir?
+
+A)function test(){
+	
+	message = "hi";
+}
+test();
+alert(message);
+
+B)function test(){
+	"use strict";
+	message = "hi";
+}
+test();
+alert(message);
+
+SVAR:Í use strict  leyfir þér ekki að setja eh annað í breytu án þess að skilgreina hana,i dæmi b kemur villa útaf þvi að þú mátt,
+	 ekki gera þetta, en í a virkar það. 
+
+
+7.Afhverju virkar eftirfarandi kóðabútur með óskilgreindu breytunni, útskýrðu?
+
+var found= true;
+var result = (found || someUndeclaredVariable);  // óskilgr. breyta  )
+alert(result); // vrkari
+
+SVAR: breyta sem er boolean sem er true,önnur breyta resault sem er með vaule found or someunderclaredvariable sem er óskilgr.breyta
+alerta result sem er true.
